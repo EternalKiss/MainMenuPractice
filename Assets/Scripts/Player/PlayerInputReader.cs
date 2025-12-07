@@ -7,11 +7,9 @@ public class PlayerInputReader : MonoBehaviour
     [SerializeField] private InputActionAsset _playerInput;
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private CinemachineCamera _camera;
-    [SerializeField] private ButtonInteract _buttonInteract;
     [SerializeField] private MenuOpen _menu;
     [SerializeField] private float _moveSpeed;
 
-    private InputAction _interact;
     private InputAction _menuOpen;
     private Vector2 _move;
 
@@ -28,18 +26,12 @@ public class PlayerInputReader : MonoBehaviour
 
     private void Awake()
     {
-        _interact = InputSystem.actions.FindAction("Interact");
         _menuOpen = InputSystem.actions.FindAction("Menu");
     }
 
     private void Update()
     {
         _characterController.Move((GetForward() * _move.y + GetRight() * _move.x) * Time.deltaTime * _moveSpeed);
-
-        if( _interact.WasPressedThisFrame())
-        {
-            _buttonInteract.Interact();
-        }
 
         if(_menuOpen.WasPressedThisFrame())
         {

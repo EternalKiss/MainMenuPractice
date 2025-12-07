@@ -54,6 +54,10 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: d73514db93776374e85c05e1e5be6712
+    name: BackgroundMusic
+  - guid: fdf6f3d4f20628345a44f853bff041b0
+    name: ButtonMusic
   - guid: 8a3b0c8249502d242a5dd21944fd7257
     name: MasterVolume
   m_AudioMixerGroupViews:

@@ -284,7 +284,6 @@ GameObject:
   - component: {fileID: 76996654}
   - component: {fileID: 76996656}
   - component: {fileID: 76996657}
-  - component: {fileID: 76996658}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -304,6 +303,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1372770712}
   - {fileID: 301396392}
   - {fileID: 773376463}
   - {fileID: 1713184873}
@@ -311,7 +311,6 @@ RectTransform:
   - {fileID: 1639666002}
   - {fileID: 885204331}
   - {fileID: 1729835439}
-  - {fileID: 1372770712}
   - {fileID: 1321045554}
   - {fileID: 1240882675}
   - {fileID: 77183764}
@@ -376,7 +375,8 @@ MonoBehaviour:
   _buttmusic: {fileID: 76996657}
   _buttonMusic:
     _group: {fileID: 0}
-  _backgroundMusic: {fileID: 76996658}
+  _backgroundMusic:
+    _group: {fileID: 0}
 --- !u!114 &76996657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,20 +391,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonMusic
   _masterVolume: {fileID: -2126816985210801580, guid: d3980ebdb8174c144b810ff7be1b692e, type: 2}
   _slider: {fileID: 773376464}
---- !u!114 &76996658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76996652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf77d707a75e45048978dc48b2cd8a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BackgroundMusic
-  _masterVolume: {fileID: -4489559271401197099, guid: d3980ebdb8174c144b810ff7be1b692e, type: 2}
-  _slider: {fileID: 1713184874}
 --- !u!1 &77183763
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +785,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301396392}
   - component: {fileID: 301396393}
+  - component: {fileID: 301396394}
   m_Layer: 5
   m_Name: MasterVolumeSlider
   m_TagString: Untagged
@@ -879,6 +866,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &301396394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301396391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a978699145e64d34fb5aecdd7add5cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MasterVolume
+  _masterVolume: {fileID: 0}
+  _slider: {fileID: 301396393}
 --- !u!1 &317089113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,7 +2625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d365325d8ece9c4fade7826a9c9c488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPlayMusic
-  _button: {fileID: 1240882678}
+  _button: {fileID: 0}
   Clip: {fileID: 1240882676}
 --- !u!114 &1240882678
 MonoBehaviour:
@@ -2911,7 +2912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d365325d8ece9c4fade7826a9c9c488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPlayMusic
-  _button: {fileID: 1321045557}
+  _button: {fileID: 0}
   Clip: {fileID: 1321045556}
 --- !u!82 &1321045556
 AudioSource:
@@ -3324,7 +3325,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372770711}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3349,7 +3350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d365325d8ece9c4fade7826a9c9c488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonPlayMusic
-  _button: {fileID: 1372770715}
+  _button: {fileID: 0}
   Clip: {fileID: 1372770714}
 --- !u!82 &1372770714
 AudioSource:
