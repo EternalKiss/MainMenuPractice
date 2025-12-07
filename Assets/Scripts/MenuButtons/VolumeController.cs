@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class VolumeController : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class VolumeController : MonoBehaviour
     [SerializeField] private MasterVolume _masterVolume;
     [SerializeField] private ButtonMusic _buttonMusic;
     [SerializeField] private BackgroundMusic _backgroundMusic;
+    [SerializeField] private Toggle _toggle;
 
     private void Awake()
     {
@@ -29,17 +31,24 @@ public class VolumeController : MonoBehaviour
 
     public void ChangeVolume(string groupName, float value)
     {
-        float volume;
-
-        if (value <= 0.0001f)
+        if (_toggle.isOn)
         {
-            volume = -80f;
+            return;
         }
         else
         {
-            volume = Mathf.Log10(value) * 20f;
-        }
+            float volume;
 
-        _mixer.audioMixer.SetFloat(groupName, volume);
+            if (value <= 0.0001f)
+            {
+                volume = -80f;
+            }
+            else
+            {
+                volume = Mathf.Log10(value) * 20f;
+            }
+
+            _mixer.audioMixer.SetFloat(groupName, volume);
+        }
     }
 }
