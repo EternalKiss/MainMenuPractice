@@ -4,8 +4,7 @@ using UnityEngine.UI;
 public class ButtonPlayMusic : MonoBehaviour
 {
     [SerializeField] private Button _button;
-
-    public AudioSource Clip;
+    [SerializeField] private AudioSource _clip;
 
     private void OnEnable()
     {
@@ -13,19 +12,19 @@ public class ButtonPlayMusic : MonoBehaviour
     }
 
     private void OnDisable()
-    { 
+    {
         _button.onClick.RemoveListener(StartMusic);
     }
 
     public void StartMusic()
     {
-        if (Clip != null && !Clip.isPlaying)
+        if (_clip != null && !_clip.isPlaying)
         {
-            Clip.Play();
+            _clip.Play();
         }
         else
         {
-            Clip.Stop();
+            _clip.Stop();
         }
     }
 }

@@ -59,7 +59,7 @@ AudioMixerController:
   - guid: fdf6f3d4f20628345a44f853bff041b0
     name: ButtonMusic
   - guid: 8a3b0c8249502d242a5dd21944fd7257
-    name: MasterVolume
+    name: Master
   m_AudioMixerGroupViews:
   - guids:
     - ecd043512bec9ef4c8df9156aae51119

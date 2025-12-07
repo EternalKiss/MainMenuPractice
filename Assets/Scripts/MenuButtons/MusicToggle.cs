@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MusicToggle : MonoBehaviour
 {
     [SerializeField] private AudioMixerGroup _mixer;
-    [SerializeField] private MasterVolume _group;
+    [SerializeField] private MixerGroup _group;
     [SerializeField] private Toggle _toggle;
 
     private void Awake()

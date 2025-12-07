@@ -5,9 +5,7 @@ using UnityEngine.UI;
 public class VolumeController : MonoBehaviour
 {
     [SerializeField] private AudioMixerGroup _mixer;
-    [SerializeField] private MasterVolume _masterVolume;
-    [SerializeField] private ButtonMusic _buttonMusic;
-    [SerializeField] private BackgroundMusic _backgroundMusic;
+    [SerializeField] private MixerGroup[] _masterVolume;
     [SerializeField] private Toggle _toggle;
 
     private void Awake()
@@ -17,16 +15,18 @@ public class VolumeController : MonoBehaviour
 
     private void OnEnable()
     {
-        _masterVolume.ValueChanged += ChangeVolume;
-        _backgroundMusic.ValueChanged += ChangeVolume;
-        _buttonMusic.ValueChanged += ChangeVolume;
+        for (int i = 0; i < _masterVolume.Length; i++)
+        {
+            _masterVolume[i].ValueChanged += ChangeVolume;
+        }
     }
 
     private void OnDisable()
     {
-        _masterVolume.ValueChanged -= ChangeVolume;
-        _backgroundMusic.ValueChanged -= ChangeVolume;
-        _buttonMusic.ValueChanged -= ChangeVolume;
+        for (int i = 0; i < _masterVolume.Length; i++)
+        {
+            _masterVolume[i].ValueChanged -= ChangeVolume;
+        }
     }
 
     public void ChangeVolume(string groupName, float value)

@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class MasterVolume : MonoBehaviour
+public class MixerGroup : MonoBehaviour
 {
-    [SerializeField] private AudioMixerGroup _masterVolume;
+    [SerializeField] private AudioMixerGroup _mixerGroup;
     [SerializeField] private Slider _slider;
 
     public event Action<string, float> ValueChanged;
@@ -24,9 +24,9 @@ public class MasterVolume : MonoBehaviour
     {
         get
         {
-            if (_masterVolume != null)
+            if (_mixerGroup != null)
             {
-                return _masterVolume.name;
+                return _mixerGroup.name;
             }
             return "Нет имени";
         }
